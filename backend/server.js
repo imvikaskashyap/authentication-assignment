@@ -16,7 +16,7 @@ connectDB();
 app.use(
     cors({
       origin: [
-        "https://authentication-assignment-gamma.vercel.app/", 
+        "https://authentication-assignment-gamma.vercel.app", 
         "https://authentication-assignment-o9ii.onrender.com",
         "http://localhost:3000",
       ],
