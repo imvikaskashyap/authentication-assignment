@@ -2,19 +2,23 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import BACKEND_URL from '../utils/config';
+import Loader from '../component/loader';
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const { email, password } = formData;
+  const [loading, setLoading] = useState(false); 
   const navigate = useNavigate();
 
   const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const onSubmit = async e => {
     e.preventDefault();
+    setLoading(true); 
     try {
       const res = await axios.post(`${BACKEND_URL}/api/login`, formData);
       localStorage.setItem('token', res.data.token);
+      setLoading(false); 
       alert('Login successful');
       navigate('/home');
     } catch (err) {
@@ -23,6 +27,8 @@ const Login = () => {
   };
 
   return (
+    <>
+    {loading && <Loader />}
     <div className="container mt-5">
       <div className="row justify-content-center">
         <div className="col-md-6">
@@ -43,6 +49,7 @@ const Login = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

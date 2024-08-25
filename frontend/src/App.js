@@ -6,6 +6,7 @@ import Layout from './Layout/Layout';
 import PrivateRoute from './utils/PrivateRoute';
 import Allusers from './pages/Allusers';
 import HomePage from './pages/HomePage';
+import "./App.css"
 
 const App = () => {
   return (
