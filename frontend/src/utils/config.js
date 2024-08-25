@@ -1,3 +1,3 @@
-const BACKEND_URL = 'http://localhost:5000'
+const BACKEND_URL = 'https://authentication-assignment-o9ii.onrender.com'
 
 export default BACKEND_URL;

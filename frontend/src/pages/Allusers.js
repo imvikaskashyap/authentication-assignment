@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import BACKEND_URL from "../utils/config";
 
-const Home = () => {
+const Allusers = () => {
   const [users, setUsers] = useState([]);
   const [editUser, setEditUser] = useState(null);
 
@@ -138,4 +138,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Allusers;
